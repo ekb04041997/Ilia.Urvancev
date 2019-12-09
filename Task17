@@ -1,0 +1,19 @@
+#include "pch.h"
+#include<iostream>
+using namespace std;
+double* Max(double *pa, double *pb, double *pc)
+{
+	double P = ((*pa >= *pb) ? *pa : *pb) > *pc ? ((*pa >= *pb) ? *pa : *pb) : *pc;
+	double *PP = &P;
+	return PP;
+}
+int main()
+{
+	setlocale(LC_ALL, "RUS");
+	double a, b, c;
+	cout << "Введите три числа:" << endl;;
+	cin >> a >> b >> c;
+	double *g = Max(&a, &b, &c);
+	cout << "Максимальное инверитующее = " << *g*(-1) << endl;
+	system("pause");
+} 
