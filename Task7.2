@@ -1,0 +1,28 @@
+#include "pch.h"
+#include "iostream"
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	double a1, a2, b1, b2, c1, c2, S, c;
+	cout << "Введите координаты вершин A, B, C:" << endl;
+	cin >> a1 >> a2;
+	cin >> b1 >> b2;
+	cin >> c1 >> c2;
+	if(a1==b1 && a2==b2 || b1==c1 && b2==c2 || a1==c1 && a2==c2)
+	{
+		do 
+		{
+			cout << "Две или все координаты находятся в одной точке ==> Это не треугольник " << endl;
+			cout << "Введите координаты вершин A, B, C:" << endl;
+			cin >> a1 >> a2;
+			cin >> b1 >> b2;
+			cin >> c1 >> c2;
+		} while (	a1 == b1 && a2 == b2 || b1 == c1 && b2 == c2 || a1 == c1 && a2 == c2);
+	}
+		S = 0.5*abs((b1 - a1)*(c2 - a2) - (c1 - a1)*(b2 - a2));
+		cout << "S= " << S << endl;
+	
+	system("pause");
+	return 0;
+}
