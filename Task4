@@ -1,0 +1,28 @@
+#include "pch.h"
+#include "iostream"
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int a, b;
+	cout << "Введите 3начения: "<< endl;
+	cout << "a: ";
+	cin >> a;
+	cout << "b: ";
+	cin >> b;
+	cout << "Меняем переменные местами с помощью третьей переменной: " << endl;
+	int c;
+	c = b;
+	b = a;
+	a = c;
+	cout	<< "a: " << a << endl 
+			<< "b: " << b << endl;
+	cout <<"Меняем обратно без помощи дополнительной переменной: " << endl;
+	a = a + b;
+	b = a - b;
+	a = a - b;
+	cout	<< "a: " << a << endl
+			<< "b: " << b << endl;
+	system("pause");
+	return 0;
+} 
