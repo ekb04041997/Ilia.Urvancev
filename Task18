@@ -1,0 +1,36 @@
+#include "pch.h"
+#include<iostream>
+#include<ctime>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "RUS");
+	srand(time(NULL));
+	int arr[20];
+	int i, a, b;
+	for (i = 0; i < 20; i++)
+	{
+		arr[i] = rand() % 201 - 100;
+	}
+	for (i = 0; i < 20; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+	a = arr[0];
+	for (i = 1; i < 20; i++)
+	{
+		if (arr[i] <= a)
+			a = arr[i];
+	}
+	cout << "Минимальное = " << a << endl;
+	b = arr[0];
+	/*b = 6;*/
+	for (i = 1; i < 20; i++)
+	{
+		if (arr[i] >= b)
+			b = arr[i];
+	}
+	cout << "Максимальное = " << b << endl;
+	system("pause");
+}
