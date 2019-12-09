@@ -1,0 +1,23 @@
+#include "pch.h"
+#include "iostream"
+#include <math.h>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int n;
+	cout << "Введите целое положительное число n" << endl;
+	cin >> n;
+	if (n < 0)					{ cout << "Число является отрицательным."	<< endl; system("pause"); return 0; }
+	else if (n == 1 || n == 0)	{ cout << "Число " << n << " составное."	<< endl; system("pause"); return 0; }
+	else if (n == 2)			{ cout << "Число " << n << " простое."		<< endl; system("pause"); return 0; }
+	else if (n % 2 == 0)		{ cout << "Число " << n << " составное."	<< endl; system("pause"); return 0; }
+	for (int i = 3; i <= sqrt(n); i += 2)
+	{
+		if (n%i == 0)
+		{
+			cout << "Число " << n << " составное." << endl; system("pause"); return 0;
+		}
+		cout << "Число " << n << " простое." << endl; system("pause"); return 0;
+	}
+}
