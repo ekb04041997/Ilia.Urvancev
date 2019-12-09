@@ -1,0 +1,17 @@
+#include "pch.h"
+#include "iostream"
+using namespace std;
+int main()
+{
+
+	setlocale(LC_ALL, "Russian");
+	double x, x0, v0, t, g=9.8;
+	cout << "Введите начальные параметры x0, v0, t:"<<endl;
+	cin >> x0;
+	cin >> v0;
+	cin >> t;
+	x = x0 + v0 * t + (g*(t*t)) / 2;
+	cout << "Объект преодолел расстояние равное " << x << " метров." << endl;
+	system("pause");
+	return 0;
+}
