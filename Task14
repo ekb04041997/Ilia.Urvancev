@@ -1,0 +1,53 @@
+#include "pch.h"
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	srand(time(NULL));
+	int n, mas[1000]{};
+	cout << "Введите число символов в массиве: ";
+	cin >> n;
+	cout << endl;
+	for (int i = 0; i < n; i++)
+	{
+		mas[i] = rand() % 100;
+	}
+	for (int i = 0; i < n; i++)
+		cout << mas[i] << " ";
+	cout << endl;
+	for (int i = n; i > 0; i--)
+	{
+		for (int i = n; i > 0; i--)
+			if (mas[i - 1] < mas[i - 2])
+			{
+				int d = mas[i - 1];
+				mas[i - 1] = mas[i - 2];
+				mas[i - 2] = d;
+			}
+	}
+	cout << endl;
+	int a1 = mas[4], a2 = mas[3], a3 = mas[2], a4 = mas[1], a5 = mas[0];
+	switch (n)
+	{ 
+	case 0: cout << "В массиве нет чисел."; break;
+	case 1:	cout << a5; break;
+	case 2:	cout << a5 << endl<< a4 << " " << a5; break;
+	case 3:	cout << a5 << endl<< a4 << " " << a5 << endl<<a3 << " " << a4 << " " << a5; break;
+	case 4:	cout << a5 << endl << a4 << " " << a5 << endl << a3 << " " << a4 << " " << a5 << endl;
+			cout<< a2 << " " << a3 << " " << a4 << " " << a5; break;
+	default:cout << a5 << endl << a4 << " " << a5 << endl << a3 << " " << a4 << " " << a5 << endl;
+			cout << a2 << " " << a3 << " " << a4 << " " << a5 << endl;
+			cout << a1 << " " << a2 << " " << a3 << " " << a4 << " " << a5 << endl;
+	for (int i = 5;i<n; i++) 
+	{		
+			cout << a1 << " " << a2 << " " << a3 << " " << a4 << " " << a5 << endl; 
+	}
+	break;
+	}
+	cout << endl;
+	system("pause");
+	return 0;
+}			
