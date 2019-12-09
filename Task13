@@ -1,0 +1,27 @@
+#include "pch.h"
+#include "iostream"
+#include <math.h>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int s, l1, r1, l2, r2, a;
+	cout << "Введите целые числа S,l1,r1,l2,r2" << endl;
+	cout << "такие что (-10^(15)<=s,l1,r1,l2,r2<=10^(15),l1<r1,l2<r2): " << endl;
+	cin >> s >> l1 >> r1 >> l2 >> r2;
+	if (r1+r2 >= s)
+	{
+		for (int i1 = l1; i1 <= r1; i1++)
+		{
+			for (int i2 = l2; i2 <= r2; i2++)
+			{
+				a=i1+i2;
+				if (a == s) { cout << i1 << " " << i2 << endl; system("pause");return 0; }
+				
+			} 
+		}
+	}
+	else cout << "-1" << endl;
+	system("pause");
+	return 0;
+}
