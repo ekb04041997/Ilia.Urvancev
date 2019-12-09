@@ -1,0 +1,29 @@
+#include "pch.h"
+#include "iostream"
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int q, w;
+	double e, r;
+	cout << "Введите 3начения переменной int: "<< endl;
+	cin >> q;
+	cin >> w;
+	cout << "Введите 3начения переменной double: " << endl;
+	cin >> e; 
+	cin >> r;
+	cout << "Вывод(int & int):"			<< endl << "+: " << q << " + " << w << "= " << q + w << endl
+												<< "-: " << q << " - " << w << "= " << q - w << endl
+												<< "*: " << q << " * " << w << "= " << q * w << endl
+												<< "/: " << q << " / " << w << "= " << q / w << endl;
+	cout << "Вывод(double & double):"	<< endl << "+: " << e << " + " << r << "= " << e + r << endl
+												<< "-: " << e << " - " << r << "= " << e - r << endl
+												<< "*: " << e << " * " << r << "= " << e * r << endl
+												<< "/: " << e << " / " << r << "= " << e / r << endl;
+	cout << "Вывод(int & double):"		<< endl << "+: " << q << " + " << e << "= " << q + e << endl
+												<< "-: " << q << " - " << e << "= " << q - e << endl
+												<< "*: " << q << " * " << e << "= " << q * e << endl
+												<< "/: " << q << " / " << e << "= " << q / e << endl;
+	system("pause");
+	return 0;
+}
