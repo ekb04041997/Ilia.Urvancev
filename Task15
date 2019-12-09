@@ -1,0 +1,43 @@
+#include "pch.h"
+#include <iostream>
+#include <ctime>
+#define _USE_MATH_DEFINES
+#include <cmath>
+#include <math.h>
+
+using namespace std;
+
+long long fact(int n)
+{
+	int j = 1;
+	for (int i = 1; i < (n + 1); i++)
+	{
+		j *= i;
+	}
+	return j;
+} 
+double sin(double x, int n)
+{
+	double sum=x,t=-1,g;
+	for (int i = 1; i < n; i++)
+	{
+	sum += (t)*(pow(x, 2 * i + 1)) / (fact(2 * i + 1));
+	t *= (-1);
+	}
+	return sum;
+} 
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	for (double i = 0; i <= (2 * M_PI); i += (M_PI / 5))
+	{
+		cout << i << endl;
+		cout << "sin(x)= " << sin(i) << endl;
+		cout << "sin(x)-sin(x,1)= " << sin(i) - sin(i, 1)  << endl;
+		cout << "sin(x)-sin(x,5)= " << sin(i) - sin(i, 5)  << endl;
+		cout << "sin(x)-sin(x,10)=" << sin(i) - sin(i, 10) << endl;
+		system("pause");
+	}
+	system("pause");
+	return 0;
+}
